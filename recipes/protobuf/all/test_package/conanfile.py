@@ -45,7 +45,9 @@ class TestPackageConan(ConanFile):
 
             if self._protoc_available:
                 # Test the build built with protoc
-                assert os.path.isfile(os.path.join("with_protoc", "addressbook.pb.cc"))
-                assert os.path.isfile(os.path.join("with_protoc", "addressbook.pb.h"))
+                assert os.path.isfile(os.path.join(
+                    "with_protoc", "addressbook.pb.cc"))
+                assert os.path.isfile(os.path.join(
+                    "with_protoc", "addressbook.pb.h"))
                 bin_path = os.path.join("with_protoc", "bin", "test_package")
                 self.run(bin_path, run_environment=True)
